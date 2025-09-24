@@ -352,7 +352,7 @@ export default function AIContentGenerator() {
             <div className="text-center py-12 text-gray-500">
               <Sparkles className="h-12 w-12 mx-auto mb-4 text-gray-300" />
               <div className="text-lg mb-2">No content generated yet</div>
-              <div className="text-sm">Fill in the form and click "Generate Content" to get started</div>
+              <div className="text-sm">Fill in the form and click &quot;Generate Content&quot; to get started</div>
             </div>
           )}
         </div>
@@ -369,7 +369,7 @@ export default function AIContentGenerator() {
           <div>
             <h4 className="font-medium text-gray-900 mb-2">💡 Be Specific</h4>
             <p className="text-sm text-gray-600">
-              Instead of "health tips", try "5 morning habits for better energy"
+              Instead of &quot;health tips&quot;, try &quot;5 morning habits for better energy&quot;
             </p>
           </div>
           
