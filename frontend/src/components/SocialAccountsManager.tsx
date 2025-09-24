@@ -320,10 +320,10 @@ export default function SocialAccountsManager() {
           Follow these steps to connect your social media accounts:
         </p>
         <ol className="list-decimal list-inside space-y-2 text-blue-800">
-          <li>Click "Connect Account" for the platform you want to add</li>
-          <li>You'll be redirected to the platform's authorization page</li>
+         <li>Click &quot;Connect Account&quot; for the platform you want to add</li>
+          <li>You&apos;ll be redirected to the platform&apos;s authorization page</li>
           <li>Log in and authorize Posty Bot to access your account</li>
-          <li>You'll be redirected back and your account will be connected</li>
+          <li>You&apos;ll be redirected back and your account will be connected</li>
         </ol>
         <div className="mt-4 p-3 bg-blue-100 rounded-md">
           <p className="text-sm text-blue-800">
