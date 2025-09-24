@@ -59,13 +59,13 @@ export default function AnalyticsDashboard() {
       
       // Calculate analytics from posts data
       const totalPosts = posts.length;
-      const publishedPosts = posts.filter((p: any) => p.status === 'published').length;
-      const scheduledPosts = posts.filter((p: any) => p.status === 'scheduled').length;
-      const failedPosts = posts.filter((p: any) => p.status === 'failed').length;
+  const publishedPosts = posts.filter((p: { status: string }) => p.status === 'published').length;
+  const scheduledPosts = posts.filter((p: { status: string }) => p.status === 'scheduled').length;
+  const failedPosts = posts.filter((p: { status: string }) => p.status === 'failed').length;
 
       // Platform statistics
       const platformCounts: { [key: string]: { total: number; successful: number } } = {};
-      posts.forEach((post: any) => {
+      posts.forEach((post: { platforms: string[]; status: string }) => {
         post.platforms.forEach((platform: string) => {
           if (!platformCounts[platform]) {
             platformCounts[platform] = { total: 0, successful: 0 };
@@ -91,7 +91,7 @@ export default function AnalyticsDashboard() {
         date.setDate(date.getDate() - i);
         const dateStr = date.toISOString().split('T')[0];
         
-        const postsCount = posts.filter((post: any) => {
+        const postsCount = posts.filter((post: { createdAt: string }) => {
           const postDate = new Date(post.createdAt).toISOString().split('T')[0];
           return postDate === dateStr;
         }).length;
