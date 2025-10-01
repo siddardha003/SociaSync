@@ -1,8 +1,8 @@
-# Posty Bot - AI-Powered Social Media Scheduler
+# SocioSync - AI-Powered Social Media Scheduler
 
 ## 🚀 Overview
 
-Posty Bot is a comprehensive social media management platform that combines AI-powered content generation with multi-platform posting capabilities. Built with Next.js, Node.js, and MongoDB, it provides a complete solution for managing your social media presence.
+SocioSync is a comprehensive social media management platform that combines AI-powered content generation with multi-platform posting capabilities. Built with Next.js, Node.js, and MongoDB, it provides a complete solution for managing your social media presence.
 
 ## ✨ Features Implemented
 
@@ -104,7 +104,7 @@ Posty Bot is a comprehensive social media management platform that combines AI-p
 ### Environment Variables
 ```env
 # Database
-MONGODB_URI=mongodb://localhost:27017/posty_bot
+MONGODB_URI=mongodb://localhost:27017/sociosync
 
 # JWT
 JWT_SECRET=your-secret-key
@@ -132,8 +132,8 @@ FRONTEND_URL=http://localhost:3000
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/your-repo/posty-bot.git
-cd posty-bot
+git clone https://github.com/your-repo/sociosync.git
+cd sociosync
 
 # Install backend dependencies
 cd backend

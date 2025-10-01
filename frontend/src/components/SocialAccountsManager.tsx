@@ -322,7 +322,7 @@ export default function SocialAccountsManager() {
         <ol className="list-decimal list-inside space-y-2 text-blue-800">
          <li>Click &quot;Connect Account&quot; for the platform you want to add</li>
           <li>You&apos;ll be redirected to the platform&apos;s authorization page</li>
-          <li>Log in and authorize Posty Bot to access your account</li>
+          <li>Log in and authorize SocioSync to access your account</li>
           <li>You&apos;ll be redirected back and your account will be connected</li>
         </ol>
         <div className="mt-4 p-3 bg-blue-100 rounded-md">

@@ -1,7 +1,7 @@
 @echo off
-REM PostyBot Start Script for Windows
+REM SocioSync Start Script for Windows
 
-echo 🚀 Starting PostyBot Development Environment...
+echo 🚀 Starting SocioSync Development Environment...
 
 REM Check if .env file exists
 if not exist ".env" (
@@ -39,7 +39,7 @@ if %errorlevel% equ 0 (
 )
 
 echo.
-echo 🎉 PostyBot is ready!
+echo 🎉 SocioSync is ready!
 echo 📱 Frontend: http://localhost:3000
 echo 🔧 Backend API: http://localhost:5000
 echo 📊 Health Check: http://localhost:5000/api/health

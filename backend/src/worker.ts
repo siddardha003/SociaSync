@@ -5,10 +5,10 @@ import { initializeQueue, getQueueWorker } from './services/queueService';
 // Load environment variables
 dotenv.config();
 
-console.log('🚀 Starting PostyBot Worker Process...');
+console.log('🚀 Starting SocioSync Worker Process...');
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/posty_bot')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sociosync')
   .then(async () => {
     console.log('✅ Worker connected to MongoDB');
     

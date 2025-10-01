@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Bot, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -84,7 +85,13 @@ export default function RegisterPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <Bot className="h-12 w-12 text-blue-600" />
+            <Image 
+              src="/SociaSync.png" 
+              alt="SocioSync Logo" 
+              width={48} 
+              height={48} 
+              className="h-12 w-12" 
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
             Create your account

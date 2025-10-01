@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PostyBot - AI-Powered Social Media Scheduler",
+  title: "SocioSync - AI-Powered Social Media Scheduler",
   description: "Schedule and manage your social media posts with AI-generated content",
 };
 

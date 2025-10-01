@@ -4,24 +4,24 @@ services:
   # MongoDB Database
   mongodb:
     image: mongo:7.0
-    container_name: posty_bot_mongodb
+    container_name: sociosync_mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password123
-      MONGO_INITDB_DATABASE: posty_bot
+      MONGO_INITDB_DATABASE: sociosync
     volumes:
       - mongodb_data:/data/db
       - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
-      - posty_bot_network
+      - sociosync_network
 
   # Redis for job queue
   redis:
     image: redis:7.2-alpine
-    container_name: posty_bot_redis
+    container_name: sociosync_redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -29,21 +29,21 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - posty_bot_network
+      - sociosync_network
 
   # Backend API
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: posty_bot_backend
+    container_name: sociosync_backend
     restart: unless-stopped
     ports:
       - "5000:5000"
     environment:
       NODE_ENV: development
       PORT: 5000
-      MONGODB_URI: mongodb://admin:password123@mongodb:27017/posty_bot?authSource=admin
+      MONGODB_URI: mongodb://admin:password123@mongodb:27017/sociosync?authSource=admin
       REDIS_URL: redis://:redis123@redis:6379
       JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
       OPENAI_API_KEY: ${OPENAI_API_KEY}
@@ -62,18 +62,18 @@ services:
       - ./backend:/app
       - /app/node_modules
     networks:
-      - posty_bot_network
+      - sociosync_network
 
   # Worker Process
   worker:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: posty_bot_worker
+    container_name: sociosync_worker
     restart: unless-stopped
     environment:
       NODE_ENV: development
-      MONGODB_URI: mongodb://admin:password123@mongodb:27017/posty_bot?authSource=admin
+      MONGODB_URI: mongodb://admin:password123@mongodb:27017/sociosync?authSource=admin
       REDIS_URL: redis://:redis123@redis:6379
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       TWITTER_CLIENT_ID: ${TWITTER_CLIENT_ID}
@@ -91,14 +91,14 @@ services:
       - /app/node_modules
     command: npm run worker
     networks:
-      - posty_bot_network
+      - sociosync_network
 
   # Frontend
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: posty_bot_frontend
+    container_name: sociosync_frontend
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -112,12 +112,12 @@ services:
       - /app/node_modules
       - /app/.next
     networks:
-      - posty_bot_network
+      - sociosync_network
 
 volumes:
   mongodb_data:
   redis_data:
 
 networks:
-  posty_bot_network:
+  sociosync_network:
     driver: bridge

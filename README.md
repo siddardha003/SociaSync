@@ -1,4 +1,4 @@
-# PostyBot - AI-Powered Social Media Scheduler
+# SocioSync - AI-Powered Social Media Scheduler
 
 A full-stack MVP application for scheduling social media posts with AI-generated content across Twitter, LinkedIn, and Instagram.
 
@@ -50,7 +50,7 @@ A full-stack MVP application for scheduling social media posts with AI-generated
 
 ```bash
 git clone <repository-url>
-cd Posty_Bot
+cd SocioSync
 
 # Copy environment files
 cp .env.example .env
@@ -247,10 +247,10 @@ bull-board
 ### Database
 ```bash
 # MongoDB shell
-docker exec -it posty_bot_mongodb mongosh --username admin --password password123
+docker exec -it sociosync_mongodb mongosh --username admin --password password123
 
 # Redis CLI
-docker exec -it posty_bot_redis redis-cli -a redis123
+docker exec -it sociosync_redis redis-cli -a redis123
 ```
 
 ## 🚀 Production Deployment
@@ -306,7 +306,7 @@ docker-compose up -d
 docker-compose logs redis
 
 # Test Redis connection
-docker exec -it posty_bot_redis redis-cli ping
+docker exec -it sociosync_redis redis-cli ping
 ```
 
 **OpenAI API Errors**

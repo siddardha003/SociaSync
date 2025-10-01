@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Bot, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -31,10 +32,16 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <Bot className="h-12 w-12 text-blue-600" />
+            <Image 
+              src="/SociaSync.png" 
+              alt="SocioSync Logo" 
+              width={48} 
+              height={48} 
+              className="h-12 w-12" 
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-            Sign in to PostyBot
+            Sign in to SociaSync
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}

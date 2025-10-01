@@ -4,7 +4,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
-import { Bot, Calendar, Sparkles, Users } from "lucide-react";
+import Image from "next/image";
+import { Calendar, Sparkles, Users } from "lucide-react";
 
 export default function Home() {
   const { user, isLoading } = useAuth();
@@ -31,8 +32,14 @@ export default function Home() {
         <header className="py-6">
           <nav className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <Bot className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">PostyBot</span>
+              <Image 
+                src="/SociaSync.png" 
+                alt="SocioSync Logo" 
+                width={32} 
+                height={32} 
+                className="h-8 w-8" 
+              />
+              <span className="text-xl font-bold text-gray-900">SocioSync</span>
             </div>
             <div className="space-x-4">
               <Link
@@ -119,7 +126,7 @@ export default function Home() {
               Ready to transform your social media strategy?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join thousands of creators and businesses using PostyBot to grow their online presence.
+              Join thousands of creators and businesses using SocioSync to grow their online presence.
             </p>
             <Link
               href="/register"
@@ -132,7 +139,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="py-12 text-center text-gray-600">
-          <p>&copy; 2025 PostyBot. All rights reserved.</p>
+          <p>&copy; 2025 SocioSync. All rights reserved.</p>
         </footer>
       </div>
     </div>

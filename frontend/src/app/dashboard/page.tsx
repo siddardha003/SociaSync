@@ -75,7 +75,7 @@ export default function Dashboard() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Posty Bot</h1>
+              <h1 className="text-2xl font-bold text-gray-900">SocioSync</h1>
             </div>
             
             <div className="flex items-center space-x-4">

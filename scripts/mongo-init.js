@@ -1,7 +1,7 @@
 // MongoDB initialization script
 // This script sets up the initial database and collections
 
-db = db.getSiblingDB('posty_bot');
+db = db.getSiblingDB('sociosync');
 
 // Create collections with indexes
 db.createCollection('users');
@@ -14,4 +14,4 @@ db.posts.createIndex({ "status": 1, "scheduledAt": 1 });
 db.createCollection('socialaccounts');
 db.socialaccounts.createIndex({ "userId": 1, "platform": 1 }, { unique: true });
 
-print('✅ PostyBot database initialized successfully');
+print('✅ SocioSync database initialized successfully');
